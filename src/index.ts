@@ -75,5 +75,11 @@ export {
 	useFieldContext,
 	useFormContext,
 } from "./lib/forms/app-form";
+export {
+	never,
+	useUnsavedChanges,
+	whenDirty,
+	type LeaveGuardPolicy,
+} from "./lib/forms/unsaved-changes";
 export { normalizeFieldErrors } from "./lib/forms/validation-helpers";
 export type { ToneName } from "./lib/tone/tone";

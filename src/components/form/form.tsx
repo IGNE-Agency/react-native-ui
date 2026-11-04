@@ -11,6 +11,11 @@ import {
 	formContext,
 	useFormContext,
 } from "../../lib/forms/context";
+import {
+	useReportUnsavedChanges,
+	whenDirty,
+	type LeaveGuardPolicy,
+} from "../../lib/forms/unsaved-changes";
 import { normalizeFieldErrors } from "../../lib/forms/validation-helpers";
 import { useBusyPhase } from "../../lib/wait/use-busy-phase";
 import { Button } from "../button/button";
@@ -18,6 +23,8 @@ import { ErrorText } from "../error-text/error-text";
 
 type RootProps = Readonly<{
 	form: AnyFormApi;
+	/** Whether the form counts as unsaved changes, for `useLeaveGuard`: `whenDirty` unless given, `never` for a filter or a search. */
+	leaveGuard?: LeaveGuardPolicy;
 	children: ReactNode;
 }>;
 
@@ -30,11 +37,18 @@ type SubmitProps = Readonly<{
 	children: ReactNode;
 }>;
 
-const Root = ({ form, children }: RootProps): ReactNode => (
-	<formContext.Provider value={form}>
-		{children}
-	</formContext.Provider>
-);
+const Root = ({
+	form,
+	leaveGuard = whenDirty,
+	children,
+}: RootProps): ReactNode => {
+	useReportUnsavedChanges(useStore(form.store, leaveGuard));
+	return (
+		<formContext.Provider value={form}>
+			{children}
+		</formContext.Provider>
+	);
+};
 
 const Errors = ({ testID }: ErrorsProps): ReactNode => {
 	const form = useFormContext();
@@ -92,7 +106,8 @@ type FormNamespace = Readonly<{
 
 /**
  * A form's own parts. `Root` hands the form from `useAppForm` to the parts
- * inside it and renders nothing of its own; `Errors` shows the form-level
+ * inside it, reports its unsaved changes under its `leaveGuard` policy, and
+ * renders nothing of its own; `Errors` shows the form-level
  * errors, and `Submit` is the submit button, busy only once a submit has
  * lasted, per `useBusyPhase`, when it also announces `busyLabel`.
  *

@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 
+import { useUnsavedChanges } from "../../lib/forms/unsaved-changes";
 import type { ToneName } from "../../lib/tone/tone";
 import { ConfirmSheet } from "../confirm-sheet/confirm-sheet";
 
@@ -23,27 +24,29 @@ export type LeaveGuard = Readonly<{
 }>;
 
 /**
- * Guards a screen or a sheet against being left while `when`, such as a form
- * with unsaved changes, without knowing the router: an adapter or `Sheet.Root`
- * hands it the leaves it blocks.
+ * Guards a screen or a sheet against being left while `when`, which is
+ * `useUnsavedChanges()` unless given, without knowing the router: an adapter
+ * or `Sheet.Root` hands it the leaves it blocks.
  *
  * @example
- *   const guard = useLeaveGuard(form.state.isDirty && !form.state.isSubmitting);
+ *   const guard = useLeaveGuard();
  */
 export const useLeaveGuard = (
-	when: boolean,
+	when?: boolean,
 ): LeaveGuard => {
+	const unsaved = useUnsavedChanges();
+	const blocked = when ?? unsaved;
 	const [held, setHeld] = useState<Held | undefined>(
 		undefined,
 	);
 	const [leaving, setLeaving] = useState(false);
 
-	if (leaving && !when) {
+	if (leaving && !blocked) {
 		setLeaving(false);
 	}
 
 	return {
-		blocking: when && !leaving,
+		blocking: blocked && !leaving,
 		asking: held !== undefined,
 		hold: proceed => setHeld({ proceed, agreed: false }),
 		agree: () =>

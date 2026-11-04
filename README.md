@@ -289,13 +289,13 @@ import { Link } from "expo-router";
 
 ### Unsaved changes
 
-`useLeaveGuard(when)` guards a screen against being left while `when` holds, and `LeaveGuardSheet` asks whether to leave anyway. The guard doesn't know the router. `@maanlamp/react-native-ui/expo-router` wires it to expo-router's `usePreventRemove`, which holds back, the swipe and every navigation away. `expo-router` is an optional peer dependency, needed only for that entry point:
+`Form.Root` reports whether its form counts as unsaved changes, under its `leaveGuard` policy: `whenDirty` unless given, which counts a form changed from its defaults and not submitting, or `never` for a filter or a search. `useUnsavedChanges()` says whether any mounted form reports. `useLeaveGuard(when?)` guards a screen against being left while `when` holds, which is `useUnsavedChanges()` unless given, and `LeaveGuardSheet` asks whether to leave anyway. The guard doesn't know the router. `@maanlamp/react-native-ui/expo-router` wires it to expo-router's `usePreventRemove`, which holds back, the swipe and every navigation away. `expo-router` is an optional peer dependency, needed only for that entry point:
 
 ```tsx
 import { LeaveGuardSheet } from "@maanlamp/react-native-ui";
 import { useRouterLeaveGuard } from "@maanlamp/react-native-ui/expo-router";
 
-const guard = useRouterLeaveGuard(isDirty && !isSubmitting);
+const guard = useRouterLeaveGuard();
 
 <LeaveGuardSheet
 	guard={guard}
@@ -305,10 +305,12 @@ const guard = useRouterLeaveGuard(isDirty && !isSubmitting);
 />;
 ```
 
-A form in a sheet takes the guard on `Sheet.Root`. While it blocks, the scrim, the back press, the close control and a swipe down past the sheet's lowest stop, which springs back, are held for the question, which stacks over the sheet. Closing the sheet discards the form, so reset it once the sheet has gone:
+A stack and native tabs keep the screens they cover mounted, and those screens' forms keep reporting, so turn on `activityEnabled` on both: a hidden screen's effects stop, its forms stop reporting with them, and the default reads only the screens in view.
+
+A form in a sheet takes the guard on `Sheet.Root`. While it blocks, the scrim, the back press, the close control and a swipe down past the sheet's lowest stop, which springs back, are held for the question, which stacks over the sheet. Closing the sheet discards the form, so reset it once the sheet has gone. A sheet over a screen whose own form has changes passes its form's `when` instead of the default:
 
 ```tsx
-const guard = useLeaveGuard(isDirty && !isSubmitting);
+const guard = useLeaveGuard();
 
 <>
 	<Sheet.Root
