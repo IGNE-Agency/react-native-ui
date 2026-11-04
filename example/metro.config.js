@@ -32,7 +32,7 @@ config.resolver.sourceExts = [
  * resolve from its checkout. This app's own files sit inside the kit's folder
  * too, and resolve as usual.
  */
-const KIT = "@igne-agency/react-native-ui";
+const KIT = "@maanlamp/react-native-ui";
 
 const APP_MODULES = path.join(__dirname, "node_modules");
 

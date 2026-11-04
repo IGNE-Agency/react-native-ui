@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-You are working in a published TypeScript + React Native component kit, `@igne-agency/react-native-ui`. Apps compile its source with their own Babel, so every change ships to every app that upgrades. Make safe, minimal, maintainable changes that fit the existing architecture.
+You are working in a published TypeScript + React Native component kit, `@maanlamp/react-native-ui`. Apps compile its source with their own Babel, so every change ships to every app that upgrades. Make safe, minimal, maintainable changes that fit the existing architecture.
 
 **Primary rule**: before changing code, read the surrounding files and follow the patterns already present. Prefer the pattern used closest to the code you are editing.
 

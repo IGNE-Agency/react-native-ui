@@ -1,8 +1,8 @@
 import {
 	SheetHost,
 	TimeZoneProvider,
-} from "@igne-agency/react-native-ui";
-import type { SysTheme } from "@igne-agency/react-native-ui/theme";
+} from "@maanlamp/react-native-ui";
+import type { SysTheme } from "@maanlamp/react-native-ui/theme";
 import type { Preview } from "@storybook/react-native";
 import { View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";

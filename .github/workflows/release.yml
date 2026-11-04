@@ -1,6 +1,6 @@
-# Publishes @igne-agency/react-native-ui to npm when a version tag (v1.2.3) is
-# pushed. Authentication is npm trusted publishing (OIDC): the npm organisation
-# igne-agency lists this workflow of IGNE-Agency/react-native-ui as trusted
+# Publishes @maanlamp/react-native-ui to npm when a version tag (v1.2.3) is
+# pushed. Authentication is npm trusted publishing (OIDC): the npm account
+# maanlamp lists this workflow of IGNE-Agency/react-native-ui as trusted
 # publisher, so no npm token is stored in the repository. The tag must match
 # package.json. The repository is public, so the package carries provenance.
 # `npm publish` runs `prepack`, which builds the default theme, the declarations

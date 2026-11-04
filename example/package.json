@@ -13,7 +13,7 @@
 		"@formatjs/intl-getcanonicallocales": "3.3.0",
 		"@formatjs/intl-locale": "5.4.2",
 		"@gorhom/bottom-sheet": "5.2.14",
-		"@igne-agency/react-native-ui": "link:@igne-agency/react-native-ui",
+		"@maanlamp/react-native-ui": "link:@maanlamp/react-native-ui",
 		"@react-native-community/datetimepicker": "9.2.1",
 		"@react-native-community/slider": "5.2.1",
 		"@storybook/addon-ondevice-controls": "10.7.1",

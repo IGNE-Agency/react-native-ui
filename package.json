@@ -1,5 +1,5 @@
 {
-	"name": "@igne-agency/react-native-ui",
+	"name": "@maanlamp/react-native-ui",
 	"version": "0.1.0",
 	"description": "IGNE's React Native component kit: primitives and the presets over them, form controls in three tiers, a bottom sheet, and DTCG tokens themed through Unistyles.",
 	"license": "MIT",
@@ -16,6 +16,8 @@
 		"expo-module.config.json",
 		"ios",
 		"android",
+		"!android/build",
+		"!android/.gradle",
 		"patches"
 	],
 	"type": "module",

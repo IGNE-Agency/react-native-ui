@@ -1,4 +1,4 @@
-# @igne-agency/react-native-ui
+# @maanlamp/react-native-ui
 
 IGNE's React Native component kit. It holds primitives: single widgets whose interaction, accessibility or platform behaviour an app would otherwise solve again, exported as parts, with a preset over the parts where one composition is right nearly everywhere. That covers every form control in three tiers with a TanStack Form bridge, the feedback set and a bottom sheet. Layout for a whole view, navigation and anything that arranges several widgets belong to the app. Theming runs on DTCG tokens through Unistyles 3.
 
@@ -7,7 +7,7 @@ The kit ships TypeScript source. Your app's Babel compiles it like app code, wit
 ## Install
 
 ```sh
-bunx expo install @igne-agency/react-native-ui
+bunx expo install @maanlamp/react-native-ui
 ```
 
 Then install the peer dependencies your app doesn't have yet. `expo install` picks the versions that match your SDK:
@@ -56,7 +56,7 @@ const path = require("node:path");
 // Compare paths with forward slashes only, whichever separator Babel hands over.
 const slashed = file => file.replaceAll("\\", "/");
 const appSource = `${slashed(path.join(__dirname, "src"))}/`;
-const kitSource = "/@igne-agency/react-native-ui/";
+const kitSource = "/@maanlamp/react-native-ui/";
 
 module.exports = function (api) {
 	api.cache(true);
@@ -69,9 +69,7 @@ module.exports = function (api) {
 				"react-native-unistyles/plugin",
 				{
 					root: "src",
-					autoProcessPaths: [
-						"@igne-agency/react-native-ui",
-					],
+					autoProcessPaths: ["@maanlamp/react-native-ui"],
 				},
 			],
 			[
@@ -116,7 +114,7 @@ module.exports = config;
 The calendar's "today" and the time field's instants are read in the zone your app names, never the device's. Wrap the app in `TimeZoneProvider` with an IANA zone, such as the one your API stores for the user; a kit part that needs it throws without one:
 
 ```tsx
-import { TimeZoneProvider } from "@igne-agency/react-native-ui";
+import { TimeZoneProvider } from "@maanlamp/react-native-ui";
 
 <TimeZoneProvider zone={user.timeZone}>
 	{app}
@@ -130,7 +128,7 @@ import { TimeZoneProvider } from "@igne-agency/react-native-ui";
 Every kit sheet (`Sheet`, `ConfirmSheet`, `LeaveGuardSheet`) is drawn in one `SheetHost`, so a sheet opened from inside another one stacks over it instead of being clipped to it. Mount it once around the app, inside the gesture, safe-area and keyboard providers and the providers your sheets' content reads; a `Sheet.Root` throws without one:
 
 ```tsx
-import { SheetHost } from "@igne-agency/react-native-ui";
+import { SheetHost } from "@maanlamp/react-native-ui";
 
 <SheetHost>{app}</SheetHost>;
 ```
@@ -139,7 +137,7 @@ A sheet's content renders in the host, so it reads the contexts above the host. 
 
 ### Tree shaking
 
-Importing from `@igne-agency/react-native-ui` pulls in every component until Metro's tree shaking drops the ones you never use. Expo ships it behind two flags, set for release bundles only, for example in each `eas.json` build profile's `env` and wherever you bundle a local release:
+Importing from `@maanlamp/react-native-ui` pulls in every component until Metro's tree shaking drops the ones you never use. Expo ships it behind two flags, set for release bundles only, for example in each `eas.json` build profile's `env` and wherever you bundle a local release:
 
 ```sh
 EXPO_UNSTABLE_METRO_OPTIMIZE_GRAPH=1 EXPO_UNSTABLE_TREE_SHAKING=1
@@ -154,7 +152,7 @@ The kit's `sideEffects` names `theme/default` as its only module with side effec
 Import the kit's default theme once, before the first render, for example at the top of `index.js`:
 
 ```ts
-import "@igne-agency/react-native-ui/theme/default";
+import "@maanlamp/react-native-ui/theme/default";
 ```
 
 This registers neutral light and dark themes with Unistyles, follows the system appearance, and uses the system font.
@@ -181,10 +179,10 @@ A project layers its own token files over these in a [DTCG resolver](https://www
    		"kit": {
    			"sources": [
    				{
-   					"$ref": "../../../node_modules/@igne-agency/react-native-ui/tokens/ref.tokens.json"
+   					"$ref": "../../../node_modules/@maanlamp/react-native-ui/tokens/ref.tokens.json"
    				},
    				{
-   					"$ref": "../../../node_modules/@igne-agency/react-native-ui/tokens/sys.tokens.json"
+   					"$ref": "../../../node_modules/@maanlamp/react-native-ui/tokens/sys.tokens.json"
    				}
    			]
    		},
@@ -198,7 +196,7 @@ A project layers its own token files over these in a [DTCG resolver](https://www
    				"light": [],
    				"dark": [
    					{
-   						"$ref": "../../../node_modules/@igne-agency/react-native-ui/tokens/dark.tokens.json"
+   						"$ref": "../../../node_modules/@maanlamp/react-native-ui/tokens/dark.tokens.json"
    					}
    				]
    			},
@@ -231,7 +229,7 @@ A project layers its own token files over these in a [DTCG resolver](https://www
 3. Run the plugin from `terrazzo.config.ts`:
 
    ```ts
-   import reactNativeTheme from "@igne-agency/react-native-ui/terrazzo";
+   import reactNativeTheme from "@maanlamp/react-native-ui/terrazzo";
    import { defineConfig } from "@terrazzo/cli";
 
    export default defineConfig({
@@ -247,7 +245,7 @@ A project layers its own token files over these in a [DTCG resolver](https://www
 
    ```ts
    // src/theme/index.ts
-   import { registerTheme } from "@igne-agency/react-native-ui/theme";
+   import { registerTheme } from "@maanlamp/react-native-ui/theme";
 
    import { dark, light } from "./theme.gen";
 
@@ -263,7 +261,7 @@ import {
 	Button,
 	TextField,
 	useAppForm,
-} from "@igne-agency/react-native-ui";
+} from "@maanlamp/react-native-ui";
 ```
 
 Each component is one namespace of parts (`Button.Root`, `Button.Label`, …). Where one composition of the parts is right nearly everywhere, the kit exports it as a preset too (`TextField`, `StaleContent`, `ConfirmSheet`), and the example Storybook files those under `Presets/`, except `WheelPicker`, `MonthCalendar` and `PullToRefresh`, which are filed under the component they assemble. The kit has no copy of its own: every string a component shows or announces comes in through a prop.
@@ -291,11 +289,11 @@ import { Link } from "expo-router";
 
 ### Unsaved changes
 
-`useLeaveGuard(when)` guards a screen against being left while `when` holds, and `LeaveGuardSheet` asks whether to leave anyway. The guard doesn't know the router. `@igne-agency/react-native-ui/expo-router` wires it to expo-router's `usePreventRemove`, which holds back, the swipe and every navigation away. `expo-router` is an optional peer dependency, needed only for that entry point:
+`useLeaveGuard(when)` guards a screen against being left while `when` holds, and `LeaveGuardSheet` asks whether to leave anyway. The guard doesn't know the router. `@maanlamp/react-native-ui/expo-router` wires it to expo-router's `usePreventRemove`, which holds back, the swipe and every navigation away. `expo-router` is an optional peer dependency, needed only for that entry point:
 
 ```tsx
-import { LeaveGuardSheet } from "@igne-agency/react-native-ui";
-import { useRouterLeaveGuard } from "@igne-agency/react-native-ui/expo-router";
+import { LeaveGuardSheet } from "@maanlamp/react-native-ui";
+import { useRouterLeaveGuard } from "@maanlamp/react-native-ui/expo-router";
 
 const guard = useRouterLeaveGuard(isDirty && !isSubmitting);
 

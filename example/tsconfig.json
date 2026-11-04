@@ -6,8 +6,8 @@
 		// resolves to its source. Metro ignores these (`tsconfigPaths: false` in
 		// app.json) and resolves the kit through the link and its exports map.
 		"paths": {
-			"@igne-agency/react-native-ui": ["../src/index.ts"],
-			"@igne-agency/react-native-ui/*": ["../src/*"]
+			"@maanlamp/react-native-ui": ["../src/index.ts"],
+			"@maanlamp/react-native-ui/*": ["../src/*"]
 		}
 	},
 	"include": [
