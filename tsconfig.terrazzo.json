@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"customConditions": [],
+		"lib": ["ESNext"],
+		"jsx": "preserve",
+		"outDir": "build/terrazzo",
+		"rootDir": "src/terrazzo",
+		"declarationMap": false,
+		"types": []
+	},
+	"include": ["src/terrazzo"],
+	"exclude": []
+}

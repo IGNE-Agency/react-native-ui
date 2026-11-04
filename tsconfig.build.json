@@ -1,0 +1,16 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"emitDeclarationOnly": true,
+		"outDir": "build",
+		"rootDir": "src",
+		"types": []
+	},
+	"include": ["src"],
+	"exclude": [
+		"src/**/*.stories.tsx",
+		"src/lib/forms/story-copy.ts",
+		"src/terrazzo"
+	]
+}

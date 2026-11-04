@@ -1,0 +1,17 @@
+diff --git a/chunks/apiHelpers.js b/chunks/apiHelpers.js
+index 5a54e49571f07e30dfc962eaa486a840a6b946f5..769eee864dd01dcd211bfed37c8720f285fa9ace 100644
+--- a/chunks/apiHelpers.js
++++ b/chunks/apiHelpers.js
+@@ -32,11 +32,7 @@ function defineTemporalClass(branding, cls, getSlots, ...getterMaps) {
+   }), Object.assign({}, ...getterMaps))), cls;
+ }
+ 
+-const attachDebugString = "noop" === noop.name ? instance => {
+-  Object.defineProperty(instance, "_str_", {
+-    value: instance.toJSON()
+-  });
+-} : noop;
++const attachDebugString = noop;
+ 
+ function invalidRecordType() {
+   throwTypeError(invalidCallingContext);

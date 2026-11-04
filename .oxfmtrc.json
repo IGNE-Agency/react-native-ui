@@ -1,0 +1,27 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"useTabs": true,
+	"tabWidth": 2,
+	"semi": true,
+	"singleQuote": false,
+	"jsxSingleQuote": false,
+	"quoteProps": "as-needed",
+	"bracketSpacing": true,
+	"bracketSameLine": true,
+	"arrowParens": "avoid",
+	"endOfLine": "lf",
+	"printWidth": 60,
+	"sortPackageJson": true,
+	"ignorePatterns": [
+		".claude",
+		"*.gen.*",
+		"build",
+		"ios",
+		"android",
+		"example/ios",
+		"example/android",
+		"example/.rnstorybook/storybook.requires.ts",
+		".expo"
+	],
+	"sortImports": {}
+}

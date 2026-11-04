@@ -1,0 +1,38 @@
+{
+	"$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+	"name": "IGNE React Native UI",
+	"version": "2025.10",
+	"sets": {
+		"base": {
+			"sources": [
+				{
+					"$ref": "ref.tokens.json"
+				},
+				{
+					"$ref": "sys.tokens.json"
+				}
+			]
+		}
+	},
+	"modifiers": {
+		"theme": {
+			"contexts": {
+				"light": [],
+				"dark": [
+					{
+						"$ref": "dark.tokens.json"
+					}
+				]
+			},
+			"default": "light"
+		}
+	},
+	"resolutionOrder": [
+		{
+			"$ref": "#/sets/base"
+		},
+		{
+			"$ref": "#/modifiers/theme"
+		}
+	]
+}

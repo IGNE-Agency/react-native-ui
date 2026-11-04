@@ -1,0 +1,15 @@
+diff --git a/dist/services/file-watching/tracked-fs.js b/dist/services/file-watching/tracked-fs.js
+index 07052ad7fdf8b7b91dce5931b037d33ba399ba56..0bf199504358158b4d36636df2970765ffdf55f0 100644
+--- a/dist/services/file-watching/tracked-fs.js
++++ b/dist/services/file-watching/tracked-fs.js
+@@ -41,7 +41,9 @@ export function getWatchTargets(files, options = {}) {
+         if (isIgnoredPath(normalizedPath)) {
+             continue;
+         }
+-        nextFiles.add(normalizedPath);
++        if (fs.existsSync(normalizedPath)) {
++            nextFiles.add(normalizedPath);
++        }
+         if (includeDirectories) {
+             const directoryPath = dirname(normalizedPath);
+             if (!isIgnoredPath(directoryPath)) {

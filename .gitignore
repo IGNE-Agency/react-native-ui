@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+
+# Native builds of the example app
+example/ios/
+example/android/
+android/build/
+android/.gradle/
+.kotlin/
+
+# debug
+npm-debug.*
+
+# macOS
+.DS_Store
+
+# local files
+*.local*
+.env
+
+# typescript
+*.tsbuildinfo
+
+# generated files
+# Named paths only, never a `*.gen.*` glob.
+/build/
+/src/theme/default.gen.ts
+
+# agent worktrees
+.claude/worktrees/

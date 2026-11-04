@@ -1,0 +1,23 @@
+{
+	"extends": [
+		"expo/tsconfig.base",
+		"@react-native/typescript-config"
+	],
+	"compilerOptions": {
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": true,
+		"allowJs": false,
+		"isolatedDeclarations": true,
+		"declaration": true,
+		"declarationMap": true,
+		"noEmit": true,
+		"types": ["bun"]
+	},
+	"include": ["src", "tools"],
+	"exclude": ["node_modules", "build", "example"]
+}

@@ -1,0 +1,19 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		// The kit's `bun run check` type-checks this app too, before `build/`
+		// exists and without this app's `node_modules`, so the kit's own name
+		// resolves to its source. Metro ignores these (`tsconfigPaths: false` in
+		// app.json) and resolves the kit through the link and its exports map.
+		"paths": {
+			"@igne-agency/react-native-ui": ["../src/index.ts"],
+			"@igne-agency/react-native-ui/*": ["../src/*"]
+		}
+	},
+	"include": [
+		"src",
+		".rnstorybook/*.ts",
+		".rnstorybook/*.tsx"
+	],
+	"exclude": ["node_modules"]
+}

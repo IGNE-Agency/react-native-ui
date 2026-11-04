@@ -1,0 +1,21 @@
+{
+	"expo": {
+		"name": "Kit Storybook",
+		"slug": "react-native-ui-example",
+		"scheme": "rnui-example",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"userInterfaceStyle": "automatic",
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "agency.igne.reactnativeui.example"
+		},
+		"android": {
+			"package": "agency.igne.reactnativeui.example"
+		},
+		"experiments": {
+			"tsconfigPaths": false
+		},
+		"plugins": ["@react-native-community/datetimepicker"]
+	}
+}

@@ -1,0 +1,175 @@
+diff --git a/lib/commonjs/hooks/useAnimatedLayout.js b/lib/commonjs/hooks/useAnimatedLayout.js
+index 973d05c300911867ad6e91df2b4d4aefe5c2771e..8b1730c16cef5bf937997b47f35400063e75cddb 100644
+--- a/lib/commonjs/hooks/useAnimatedLayout.js
++++ b/lib/commonjs/hooks/useAnimatedLayout.js
+@@ -85,18 +85,6 @@ function useAnimatedLayout(containerLayoutState, topInset, bottomInset, modal, s
+       return _state;
+     });
+   }, [state, verticalInset, modal]);
+-  (0, _react.useEffect)(() => {
+-    _reactNative.Dimensions.addEventListener('change', ({
+-      window
+-    }) => {
+-      state.modify(_state => {
+-        'worklet';
+-
+-        _state.window = window;
+-        return _state;
+-      });
+-    });
+-  }, [state]);
+   //#endregion
+ 
+   return state;
+diff --git a/lib/module/hooks/useAnimatedLayout.js b/lib/module/hooks/useAnimatedLayout.js
+index b0eec9361af936659c777ea9d967981c03ad92c6..831faab03fa876d3b3944d801e54c21d2cedc0a1 100644
+--- a/lib/module/hooks/useAnimatedLayout.js
++++ b/lib/module/hooks/useAnimatedLayout.js
+@@ -81,18 +81,6 @@ export function useAnimatedLayout(containerLayoutState, topInset, bottomInset, m
+       return _state;
+     });
+   }, [state, verticalInset, modal]);
+-  useEffect(() => {
+-    Dimensions.addEventListener('change', ({
+-      window
+-    }) => {
+-      state.modify(_state => {
+-        'worklet';
+-
+-        _state.window = window;
+-        return _state;
+-      });
+-    });
+-  }, [state]);
+   //#endregion
+ 
+   return state;
+diff --git a/lib/typescript/contexts/gesture.d.ts b/lib/typescript/contexts/gesture.d.ts
+index 51f978ab7eda9efa4c811d273d354d1fbf78e3fb..967f46e3f54010a446c16ea8638e15d91f477347 100644
+--- a/lib/typescript/contexts/gesture.d.ts
++++ b/lib/typescript/contexts/gesture.d.ts
+@@ -6,4 +6,5 @@ export interface BottomSheetGestureHandlersContextType {
+ }
+ export declare const BottomSheetGestureHandlersContext: import("react").Context<BottomSheetGestureHandlersContextType | null>;
+ export declare const BottomSheetDraggableContext: import("react").Context<Gesture | null>;
++export declare const BottomSheetScrollableGestureContext: import("react").Context<Gesture | null>;
+ //# sourceMappingURL=gesture.d.ts.map
+\ No newline at end of file
+diff --git a/lib/typescript/index.d.ts b/lib/typescript/index.d.ts
+index ffc6caa0515c15dbb1b6bad0feec877b2a9a5c3e..4fa5ee70fea62b47bc40862798d9061ffb52b04f 100644
+--- a/lib/typescript/index.d.ts
++++ b/lib/typescript/index.d.ts
+@@ -13,6 +13,7 @@ export { useBottomSheetGestureHandlers } from './hooks/useBottomSheetGestureHand
+ export { useScrollHandler } from './hooks/useScrollHandler';
+ export { useScrollableSetter } from './hooks/useScrollableSetter';
+ export { useBottomSheetScrollableCreator } from './hooks/useBottomSheetScrollableCreator';
++export { BottomSheetDraggableContext, BottomSheetScrollableGestureContext } from './contexts/gesture';
+ export { BottomSheetScrollView, BottomSheetSectionList, BottomSheetFlatList, BottomSheetVirtualizedList, BottomSheetFlashList, } from './components/bottomSheetScrollable';
+ export { BottomSheetHandle } from './components/bottomSheetHandle';
+ export { default as BottomSheetDraggableView } from './components/bottomSheetDraggableView';
+diff --git a/src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx b/src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx
+index 6a57f511ff52a732ace18a27a0370f695fd01b8e..b74a784913abdbd34cddff16cf349e73a758214e 100644
+--- a/src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx
++++ b/src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx
+@@ -11,7 +11,10 @@ import {
+   SCROLLABLE_STATUS,
+   type SCROLLABLE_TYPE,
+ } from '../../constants';
+-import { BottomSheetDraggableContext } from '../../contexts/gesture';
++import {
++  BottomSheetDraggableContext,
++  BottomSheetScrollableGestureContext,
++} from '../../contexts/gesture';
+ import {
+   useBottomSheetContentContainerStyle,
+   useBottomSheetInternal,
+@@ -129,24 +132,28 @@ export function createBottomSheetScrollableComponent<T, P>(
+ 
+     //#region render
+     return (
+-      <ScrollableContainer
+-        ref={scrollableRef}
+-        nativeGesture={scrollableGesture}
+-        animatedProps={scrollableAnimatedProps}
+-        overScrollMode={overScrollMode}
+-        keyboardDismissMode={keyboardDismissMode}
+-        refreshing={refreshing}
+-        scrollEventThrottle={16}
+-        progressViewOffset={progressViewOffset}
+-        contentContainerStyle={contentContainerStyle}
+-        onRefresh={onRefresh}
+-        onScroll={scrollHandler}
+-        onContentSizeChange={handleContentSizeChange}
+-        setContentSize={setContentSize}
+-        ScrollableComponent={ScrollableComponent}
+-        refreshControl={refreshControl}
+-        {...rest}
+-      />
++      <BottomSheetScrollableGestureContext.Provider
++        value={scrollableGesture ?? null}
++      >
++        <ScrollableContainer
++          ref={scrollableRef}
++          nativeGesture={scrollableGesture}
++          animatedProps={scrollableAnimatedProps}
++          overScrollMode={overScrollMode}
++          keyboardDismissMode={keyboardDismissMode}
++          refreshing={refreshing}
++          scrollEventThrottle={16}
++          progressViewOffset={progressViewOffset}
++          contentContainerStyle={contentContainerStyle}
++          onRefresh={onRefresh}
++          onScroll={scrollHandler}
++          onContentSizeChange={handleContentSizeChange}
++          setContentSize={setContentSize}
++          ScrollableComponent={ScrollableComponent}
++          refreshControl={refreshControl}
++          {...rest}
++        />
++      </BottomSheetScrollableGestureContext.Provider>
+     );
+     //#endregion
+   });
+diff --git a/src/contexts/gesture.ts b/src/contexts/gesture.ts
+index a6b2d217a0d31a771c312fa235ae0f5f45d8365a..ee6062f9c0266e59dc0743cc0361fb2e32c3516f 100644
+--- a/src/contexts/gesture.ts
++++ b/src/contexts/gesture.ts
+@@ -11,3 +11,6 @@ export const BottomSheetGestureHandlersContext =
+   createContext<BottomSheetGestureHandlersContextType | null>(null);
+ 
+ export const BottomSheetDraggableContext = createContext<Gesture | null>(null);
++
++export const BottomSheetScrollableGestureContext =
++  createContext<Gesture | null>(null);
+diff --git a/src/hooks/useAnimatedLayout.ts b/src/hooks/useAnimatedLayout.ts
+index 68c674de6287b89a97be778f7e5273f6b6b1c929..e3d819f02685439bfcd247a047ea510b89643e90 100644
+--- a/src/hooks/useAnimatedLayout.ts
++++ b/src/hooks/useAnimatedLayout.ts
+@@ -105,15 +105,6 @@ export function useAnimatedLayout(
+     },
+     [state, verticalInset, modal]
+   );
+-  useEffect(() => {
+-    Dimensions.addEventListener('change', ({ window }) => {
+-      state.modify(_state => {
+-        'worklet';
+-        _state.window = window;
+-        return _state;
+-      });
+-    });
+-  }, [state]);
+   //#endregion
+ 
+   return state;
+diff --git a/src/index.ts b/src/index.ts
+index 7aaea57d30054e535b1c6abc252690b66e4fc4e0..eface6dd6d9208edd62a22ada5de87528c658a95 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -18,6 +18,7 @@ export { useBottomSheetGestureHandlers } from './hooks/useBottomSheetGestureHand
+ export { useScrollHandler } from './hooks/useScrollHandler';
+ export { useScrollableSetter } from './hooks/useScrollableSetter';
+ export { useBottomSheetScrollableCreator } from './hooks/useBottomSheetScrollableCreator';
++export { BottomSheetDraggableContext, BottomSheetScrollableGestureContext } from './contexts/gesture';
+ //#endregion
+ 
+ //#region components

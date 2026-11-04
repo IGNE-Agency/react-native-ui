@@ -1,0 +1,5 @@
+# Normalize to LF in the index and check out LF everywhere, matching
+# `endOfLine: "lf"` in .oxfmtrc.json. Without the explicit eol, a Windows
+# checkout with core.autocrlf=true lands CRLF and `bun fix` rewrites every
+# file back to LF.
+* text=auto eol=lf

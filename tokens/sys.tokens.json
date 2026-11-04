@@ -1,0 +1,1211 @@
+{
+	"$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+	"sys": {
+		"color": {
+			"primary": {
+				"$description": "Primary buttons and links",
+				"$type": "color",
+				"$value": "{ref.neutral.750}"
+			},
+			"on-primary": {
+				"$type": "color",
+				"$value": "{ref.neutral.0}"
+			},
+			"primary-container": {
+				"$description": "Avatar fallbacks, mention pills, brand tints",
+				"$type": "color",
+				"$value": "{ref.neutral.50}"
+			},
+			"on-primary-container": {
+				"$type": "color",
+				"$value": "{ref.neutral.800}"
+			},
+			"identity": {
+				"$description": "The brand container, turned to a hue of its own",
+				"1": {
+					"bg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.9602, 0.0119, 84]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.primary-container}",
+								"space": "oklch",
+								"hue": 84
+							}
+						}
+					},
+					"fg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.2408, 0.0472, 84]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.on-primary-container}",
+								"space": "oklch",
+								"hue": 84
+							}
+						}
+					}
+				},
+				"2": {
+					"bg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.9602, 0.0119, 127]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.primary-container}",
+								"space": "oklch",
+								"hue": 127
+							}
+						}
+					},
+					"fg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.2408, 0.0472, 127]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.on-primary-container}",
+								"space": "oklch",
+								"hue": 127
+							}
+						}
+					}
+				},
+				"3": {
+					"bg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.9602, 0.0119, 283]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.primary-container}",
+								"space": "oklch",
+								"hue": 283
+							}
+						}
+					},
+					"fg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.2408, 0.0472, 283]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.on-primary-container}",
+								"space": "oklch",
+								"hue": 283
+							}
+						}
+					}
+				},
+				"4": {
+					"bg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.9602, 0.0119, 333]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.primary-container}",
+								"space": "oklch",
+								"hue": 333
+							}
+						}
+					},
+					"fg": {
+						"$type": "color",
+						"$value": {
+							"colorSpace": "oklch",
+							"components": [0.2408, 0.0472, 333]
+						},
+						"$extensions": {
+							"nl.igne.derived": {
+								"from": "{sys.color.on-primary-container}",
+								"space": "oklch",
+								"hue": 333
+							}
+						}
+					}
+				}
+			},
+			"success": {
+				"$description": "Done, approved",
+				"fg": {
+					"$type": "color",
+					"$value": "{ref.green.700}"
+				},
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.green.50}"
+				},
+				"border": {
+					"$type": "color",
+					"$value": "{ref.green.200}"
+				}
+			},
+			"info": {
+				"$description": "Worth knowing, nothing to do",
+				"fg": {
+					"$type": "color",
+					"$value": "{ref.blue.700}"
+				},
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.blue.50}"
+				},
+				"border": {
+					"$type": "color",
+					"$value": "{ref.blue.200}"
+				}
+			},
+			"warning": {
+				"$description": "Needs attention",
+				"fg": {
+					"$type": "color",
+					"$value": "{ref.orange.700}"
+				},
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.orange.50}"
+				},
+				"border": {
+					"$type": "color",
+					"$value": "{ref.orange.200}"
+				}
+			},
+			"error": {
+				"$description": "Failed or invalid",
+				"fg": {
+					"$type": "color",
+					"$value": "{ref.red.700}"
+				},
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.red.50}"
+				},
+				"border": {
+					"$type": "color",
+					"$value": "{ref.red.200}"
+				},
+				"outline": {
+					"$type": "color",
+					"$value": "{ref.red.250}"
+				}
+			},
+			"neutral": {
+				"$description": "A chip or badge with no verdict",
+				"fg": {
+					"$type": "color",
+					"$value": "{ref.neutral.700}"
+				},
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.neutral.50}"
+				},
+				"border": {
+					"$type": "color",
+					"$value": "{ref.neutral.200}"
+				}
+			},
+			"text": {
+				"$description": "Body copy and headings",
+				"$type": "color",
+				"$value": "{ref.neutral.500}"
+			},
+			"text-muted": {
+				"$description": "Captions, help text and anything passive",
+				"$type": "color",
+				"$value": "{ref.neutral.400}"
+			},
+			"text-placeholder": {
+				"$description": "The hint text an empty field shows",
+				"$type": "color",
+				"$value": "{ref.neutral.400}"
+			},
+			"text-inverse": {
+				"$type": "color",
+				"$value": "{ref.neutral.0}"
+			},
+			"selection": {
+				"$description": "Selected text",
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.neutral.100}"
+				},
+				"fg": {
+					"$type": "color",
+					"$value": "{ref.neutral.800}"
+				}
+			},
+			"bg": {
+				"$description": "The page behind everything",
+				"$type": "color",
+				"$value": "{ref.neutral.25}"
+			},
+			"surface-lowest": {
+				"$description": "The dimmest card: a table's sub-rows",
+				"$type": "color",
+				"$value": "{ref.neutral.10}"
+			},
+			"surface": {
+				"$description": "The default card",
+				"$type": "color",
+				"$value": "{ref.neutral.0}"
+			},
+			"surface-high": {
+				"$description": "A fill nested in a card",
+				"$type": "color",
+				"$value": "{ref.neutral.50}"
+			},
+			"surface-highest": {
+				"$description": "The deepest recess: fields, placeholders",
+				"$type": "color",
+				"$value": "{ref.neutral.100}"
+			},
+			"surface-overlay": {
+				"$description": "Popups and tooltips",
+				"$type": "color",
+				"$value": "{ref.neutral.0}"
+			},
+			"surface-overlay-high": {
+				"$description": "Toasts",
+				"$type": "color",
+				"$value": "{ref.neutral.0}"
+			},
+			"border": {
+				"$description": "The quiet hairline that separation rations",
+				"$type": "color",
+				"$value": "{ref.neutral.150}"
+			},
+			"outline": {
+				"$description": "A mark that has to be found: grab bars, scroll thumbs, control outlines",
+				"$type": "color",
+				"$value": "{ref.neutral.200}"
+			},
+			"focus-ring": {
+				"$description": "Keyboard focus, on every focusable element",
+				"$type": "color",
+				"$value": "{sys.color.primary}"
+			},
+			"disabled": {
+				"bg": {
+					"$description": "The fill of a control or button that cannot be used",
+					"$type": "color",
+					"$value": "{ref.neutral.100}"
+				},
+				"fg": {
+					"$description": "The ink of a control that cannot be used: its text, icons and the marks of its choice",
+					"$type": "color",
+					"$value": "{ref.neutral.300}"
+				}
+			}
+		},
+		"state": {
+			"hover": {
+				"$type": "number",
+				"$value": 0.08
+			},
+			"focus": {
+				"$type": "number",
+				"$value": 0.1
+			},
+			"pressed": {
+				"$type": "number",
+				"$value": 0.12
+			},
+			"dragged": {
+				"$type": "number",
+				"$value": 0.16
+			}
+		},
+		"focus-ring": {
+			"width": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3,
+					"unit": "px"
+				}
+			},
+			"offset": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2,
+					"unit": "px"
+				}
+			}
+		},
+		"font": {
+			"body": {
+				"$description": "Copy",
+				"small": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 0.917,
+							"unit": "rem"
+						},
+						"fontWeight": 400,
+						"lineHeight": 1.4,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				},
+				"medium": {
+					"$type": "typography",
+					"$value": "{ref.font.body.regular.1}"
+				},
+				"medium-strong": {
+					"$type": "typography",
+					"$value": "{ref.font.body.semibold.1}"
+				},
+				"large": {
+					"$type": "typography",
+					"$value": "{ref.font.body.regular.2}"
+				}
+			},
+			"heading": {
+				"$description": "Dialog and page titles",
+				"small": {
+					"$type": "typography",
+					"$value": "{ref.font.heading.bold.1}"
+				},
+				"medium": {
+					"$type": "typography",
+					"$value": "{ref.font.heading.bold.2}"
+				},
+				"large": {
+					"$type": "typography",
+					"$value": "{ref.font.heading.bold.3}"
+				}
+			},
+			"label": {
+				"$description": "Buttons, tabs, nav items, field labels and chips",
+				"small": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 0.917,
+							"unit": "rem"
+						},
+						"fontWeight": 600,
+						"lineHeight": 1.2,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				},
+				"medium": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 1,
+							"unit": "rem"
+						},
+						"fontWeight": 600,
+						"lineHeight": 1.2,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				},
+				"large": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 1.167,
+							"unit": "rem"
+						},
+						"fontWeight": 700,
+						"lineHeight": 1.2,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				},
+				"small-strong": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 0.917,
+							"unit": "rem"
+						},
+						"fontWeight": 800,
+						"lineHeight": 1.2,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				},
+				"medium-strong": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 1,
+							"unit": "rem"
+						},
+						"fontWeight": 800,
+						"lineHeight": 1.2,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				},
+				"large-strong": {
+					"$type": "typography",
+					"$value": {
+						"fontSize": {
+							"value": 1.167,
+							"unit": "rem"
+						},
+						"fontWeight": 800,
+						"lineHeight": 1.2,
+						"letterSpacing": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				}
+			}
+		},
+		"unit": {
+			"0": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0,
+					"unit": "rem"
+				}
+			},
+			"1": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.125,
+					"unit": "rem"
+				}
+			},
+			"2": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.25,
+					"unit": "rem"
+				}
+			},
+			"3": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.375,
+					"unit": "rem"
+				}
+			},
+			"4": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.5,
+					"unit": "rem"
+				}
+			},
+			"5": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.625,
+					"unit": "rem"
+				}
+			},
+			"6": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.75,
+					"unit": "rem"
+				}
+			},
+			"7": {
+				"$type": "dimension",
+				"$value": {
+					"value": 0.875,
+					"unit": "rem"
+				}
+			},
+			"8": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1,
+					"unit": "rem"
+				}
+			},
+			"9": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.125,
+					"unit": "rem"
+				}
+			},
+			"10": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.25,
+					"unit": "rem"
+				}
+			},
+			"11": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.375,
+					"unit": "rem"
+				}
+			},
+			"12": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.5,
+					"unit": "rem"
+				}
+			},
+			"13": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.625,
+					"unit": "rem"
+				}
+			},
+			"14": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.75,
+					"unit": "rem"
+				}
+			},
+			"15": {
+				"$type": "dimension",
+				"$value": {
+					"value": 1.875,
+					"unit": "rem"
+				}
+			},
+			"16": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2,
+					"unit": "rem"
+				}
+			},
+			"17": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.125,
+					"unit": "rem"
+				}
+			},
+			"18": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.25,
+					"unit": "rem"
+				}
+			},
+			"19": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.375,
+					"unit": "rem"
+				}
+			},
+			"20": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.5,
+					"unit": "rem"
+				}
+			},
+			"21": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.625,
+					"unit": "rem"
+				}
+			},
+			"22": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.75,
+					"unit": "rem"
+				}
+			},
+			"23": {
+				"$type": "dimension",
+				"$value": {
+					"value": 2.875,
+					"unit": "rem"
+				}
+			},
+			"24": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3,
+					"unit": "rem"
+				}
+			},
+			"25": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.125,
+					"unit": "rem"
+				}
+			},
+			"26": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.25,
+					"unit": "rem"
+				}
+			},
+			"27": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.375,
+					"unit": "rem"
+				}
+			},
+			"28": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.5,
+					"unit": "rem"
+				}
+			},
+			"29": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.625,
+					"unit": "rem"
+				}
+			},
+			"30": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.75,
+					"unit": "rem"
+				}
+			},
+			"31": {
+				"$type": "dimension",
+				"$value": {
+					"value": 3.875,
+					"unit": "rem"
+				}
+			},
+			"32": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4,
+					"unit": "rem"
+				}
+			},
+			"33": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.125,
+					"unit": "rem"
+				}
+			},
+			"34": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.25,
+					"unit": "rem"
+				}
+			},
+			"35": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.375,
+					"unit": "rem"
+				}
+			},
+			"36": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.5,
+					"unit": "rem"
+				}
+			},
+			"37": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.625,
+					"unit": "rem"
+				}
+			},
+			"38": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.75,
+					"unit": "rem"
+				}
+			},
+			"39": {
+				"$type": "dimension",
+				"$value": {
+					"value": 4.875,
+					"unit": "rem"
+				}
+			},
+			"40": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5,
+					"unit": "rem"
+				}
+			},
+			"41": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.125,
+					"unit": "rem"
+				}
+			},
+			"42": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.25,
+					"unit": "rem"
+				}
+			},
+			"43": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.375,
+					"unit": "rem"
+				}
+			},
+			"44": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.5,
+					"unit": "rem"
+				}
+			},
+			"45": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.625,
+					"unit": "rem"
+				}
+			},
+			"46": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.75,
+					"unit": "rem"
+				}
+			},
+			"47": {
+				"$type": "dimension",
+				"$value": {
+					"value": 5.875,
+					"unit": "rem"
+				}
+			},
+			"48": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6,
+					"unit": "rem"
+				}
+			},
+			"49": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.125,
+					"unit": "rem"
+				}
+			},
+			"50": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.25,
+					"unit": "rem"
+				}
+			},
+			"51": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.375,
+					"unit": "rem"
+				}
+			},
+			"52": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.5,
+					"unit": "rem"
+				}
+			},
+			"53": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.625,
+					"unit": "rem"
+				}
+			},
+			"54": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.75,
+					"unit": "rem"
+				}
+			},
+			"55": {
+				"$type": "dimension",
+				"$value": {
+					"value": 6.875,
+					"unit": "rem"
+				}
+			},
+			"56": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7,
+					"unit": "rem"
+				}
+			},
+			"57": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.125,
+					"unit": "rem"
+				}
+			},
+			"58": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.25,
+					"unit": "rem"
+				}
+			},
+			"59": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.375,
+					"unit": "rem"
+				}
+			},
+			"60": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.5,
+					"unit": "rem"
+				}
+			},
+			"61": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.625,
+					"unit": "rem"
+				}
+			},
+			"62": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.75,
+					"unit": "rem"
+				}
+			},
+			"63": {
+				"$type": "dimension",
+				"$value": {
+					"value": 7.875,
+					"unit": "rem"
+				}
+			},
+			"64": {
+				"$type": "dimension",
+				"$value": {
+					"value": 8,
+					"unit": "rem"
+				}
+			}
+		},
+		"radius": {
+			"none": {
+				"$description": "Inner joins of a group that reads as one object",
+				"$type": "dimension",
+				"$value": {
+					"value": 0,
+					"unit": "px"
+				}
+			},
+			"xs": {
+				"$description": "The densest chrome: skeleton lines, marks inside fields",
+				"$type": "dimension",
+				"$value": {
+					"value": 0.25,
+					"unit": "rem"
+				}
+			},
+			"sm": {
+				"$description": "Menu rows, tooltips, checkboxes, attachment tiles",
+				"$type": "dimension",
+				"$value": {
+					"value": 0.5,
+					"unit": "rem"
+				}
+			},
+			"md": {
+				"$description": "Cards, tables, nav items, popups, toasts",
+				"$type": "dimension",
+				"$value": {
+					"value": 0.75,
+					"unit": "rem"
+				}
+			},
+			"lg": {
+				"$description": "Popovers and drawers",
+				"$type": "dimension",
+				"$value": {
+					"value": 1,
+					"unit": "rem"
+				}
+			},
+			"xl": {
+				"$description": "Dialogs and bottom sheets",
+				"$type": "dimension",
+				"$value": {
+					"value": 1.75,
+					"unit": "rem"
+				}
+			},
+			"full": {
+				"$description": "Pills: buttons, chips, badges, switches, tabs",
+				"$type": "dimension",
+				"$value": {
+					"value": 999,
+					"unit": "px"
+				}
+			},
+			"circle": {
+				"$type": "dimension",
+				"$value": "{sys.radius.full}",
+				"$description": "Avatars and radio buttons. A circle, on a square element: the full radius rounds a square into one."
+			}
+		},
+		"shadow": {
+			"umbra": {
+				"$type": "color",
+				"$value": {
+					"colorSpace": "srgb",
+					"components": [0, 0, 0],
+					"hex": "#000000",
+					"alpha": 0.1
+				}
+			},
+			"penumbra": {
+				"$type": "color",
+				"$value": {
+					"colorSpace": "srgb",
+					"components": [0, 0, 0],
+					"hex": "#000000",
+					"alpha": 0.06
+				}
+			}
+		},
+		"elevation": {
+			"0": {
+				"$description": "The page",
+				"$type": "shadow",
+				"$value": [
+					{
+						"color": {
+							"colorSpace": "srgb",
+							"components": [0, 0, 0],
+							"alpha": 0
+						},
+						"offsetX": {
+							"value": 0,
+							"unit": "px"
+						},
+						"offsetY": {
+							"value": 0,
+							"unit": "px"
+						},
+						"blur": {
+							"value": 0,
+							"unit": "px"
+						},
+						"spread": {
+							"value": 0,
+							"unit": "px"
+						}
+					}
+				]
+			},
+			"1": {
+				"$description": "Popups and tooltips",
+				"$type": "shadow",
+				"$value": [
+					{
+						"color": "{sys.shadow.umbra}",
+						"offsetX": {
+							"value": 0,
+							"unit": "px"
+						},
+						"offsetY": {
+							"value": 1,
+							"unit": "px"
+						},
+						"blur": {
+							"value": 2,
+							"unit": "px"
+						},
+						"spread": {
+							"value": 0,
+							"unit": "px"
+						}
+					},
+					{
+						"color": "{sys.shadow.penumbra}",
+						"offsetX": {
+							"value": 0,
+							"unit": "px"
+						},
+						"offsetY": {
+							"value": 2,
+							"unit": "px"
+						},
+						"blur": {
+							"value": 6,
+							"unit": "px"
+						},
+						"spread": {
+							"value": 2,
+							"unit": "px"
+						}
+					}
+				]
+			},
+			"2": {
+				"$description": "Toasts",
+				"$type": "shadow",
+				"$value": [
+					{
+						"color": "{sys.shadow.umbra}",
+						"offsetX": {
+							"value": 0,
+							"unit": "px"
+						},
+						"offsetY": {
+							"value": 2,
+							"unit": "px"
+						},
+						"blur": {
+							"value": 3,
+							"unit": "px"
+						},
+						"spread": {
+							"value": 0,
+							"unit": "px"
+						}
+					},
+					{
+						"color": "{sys.shadow.penumbra}",
+						"offsetX": {
+							"value": 0,
+							"unit": "px"
+						},
+						"offsetY": {
+							"value": 6,
+							"unit": "px"
+						},
+						"blur": {
+							"value": 10,
+							"unit": "px"
+						},
+						"spread": {
+							"value": 4,
+							"unit": "px"
+						}
+					}
+				]
+			}
+		},
+		"motion": {
+			"instant": {
+				"$description": "Popups, tooltips, hover and press",
+				"$type": "duration",
+				"$value": {
+					"value": 100,
+					"unit": "ms"
+				}
+			},
+			"short": {
+				"$description": "Dialogs, drawers, check marks",
+				"$type": "duration",
+				"$value": {
+					"value": 200,
+					"unit": "ms"
+				}
+			},
+			"medium": {
+				"$description": "Larger surfaces: the theme change",
+				"$type": "duration",
+				"$value": {
+					"value": 300,
+					"unit": "ms"
+				}
+			},
+			"long": {
+				"$description": "No consumer yet",
+				"$type": "duration",
+				"$value": {
+					"value": 400,
+					"unit": "ms"
+				}
+			},
+			"standard": {
+				"$description": "Most transitions: a menu opening",
+				"$type": "cubicBezier",
+				"$value": [0.2, 0, 0, 1]
+			},
+			"emphasized": {
+				"$description": "A larger move: a dialog opening",
+				"$type": "cubicBezier",
+				"$value": [0.32, 0.72, 0, 1]
+			},
+			"decelerate": {
+				"$description": "Something arriving: a sent comment",
+				"$type": "cubicBezier",
+				"$value": [0, 0, 0, 1]
+			},
+			"accelerate": {
+				"$description": "Something leaving: a cleared selection",
+				"$type": "cubicBezier",
+				"$value": [0.3, 0, 1, 1]
+			},
+			"overshoot": {
+				"$description": "A mark popping in: a check mark",
+				"$type": "cubicBezier",
+				"$value": [0.34, 1.56, 0.64, 1]
+			}
+		}
+	}
+}

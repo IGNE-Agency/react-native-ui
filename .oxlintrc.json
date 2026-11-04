@@ -1,0 +1,51 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": [
+		"react",
+		"typescript",
+		"oxc",
+		"import",
+		"promise"
+	],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "error",
+		"perf": "warn"
+	},
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	},
+	"ignorePatterns": [
+		".claude",
+		"build",
+		"src/theme/default.gen.ts",
+		"example/ios",
+		"example/android",
+		"example/.rnstorybook/storybook.requires.ts",
+		"example/.expo",
+		"ios",
+		"android",
+		".expo"
+	],
+	"rules": {
+		"curly": "error",
+		"func-style": ["error", "expression"],
+		"typescript/consistent-type-definitions": [
+			"error",
+			"type"
+		],
+		"typescript/no-floating-promises": "error",
+		"react/rules-of-hooks": "error",
+		"react/exhaustive-deps": "off",
+		"react/react-in-jsx-scope": "off",
+		"import/namespace": "off",
+		"immutable/require-readonly": "error"
+	},
+	"jsPlugins": [
+		{
+			"name": "immutable",
+			"specifier": "./tools/oxlint-plugin-immutable.mjs"
+		}
+	]
+}

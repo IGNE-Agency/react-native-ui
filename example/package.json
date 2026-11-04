@@ -1,0 +1,57 @@
+{
+	"name": "react-native-ui-example",
+	"version": "0.0.0",
+	"private": true,
+	"main": "index.js",
+	"scripts": {
+		"android": "expo run:android",
+		"ios": "expo run:ios",
+		"start": "expo start --dev-client"
+	},
+	"dependencies": {
+		"@expo/ui": "58.0.26",
+		"@formatjs/intl-getcanonicallocales": "3.3.0",
+		"@formatjs/intl-locale": "5.4.2",
+		"@gorhom/bottom-sheet": "5.2.14",
+		"@igne-agency/react-native-ui": "link:@igne-agency/react-native-ui",
+		"@react-native-community/datetimepicker": "9.2.1",
+		"@react-native-community/slider": "5.2.1",
+		"@storybook/addon-ondevice-controls": "10.7.1",
+		"@storybook/react-native": "10.7.1",
+		"@tanstack/react-form": "1.33.5",
+		"expo": "58.0.22",
+		"expo-blur": "58.0.5",
+		"expo-constants": "58.0.14",
+		"expo-dev-client": "58.0.18",
+		"expo-document-picker": "58.0.4",
+		"expo-haptics": "58.0.7",
+		"expo-image-picker": "58.0.10",
+		"expo-linking": "58.0.15",
+		"expo-router": "58.0.29",
+		"react": "19.3.0",
+		"react-native": "0.88.1",
+		"react-native-gesture-handler": "3.3.0",
+		"react-native-keyboard-controller": "1.22.7",
+		"react-native-nitro-modules": "0.37.1",
+		"react-native-reanimated": "4.7.1",
+		"react-native-safe-area-context": "5.10.1",
+		"react-native-screens": "4.30.1",
+		"react-native-svg": "15.16.0",
+		"react-native-unistyles": "3.8.0",
+		"react-native-worklets": "0.13.0",
+		"storybook": "10.6.5",
+		"temporal-polyfill": "1.0.6",
+		"zod": "4.6.7"
+	},
+	"devDependencies": {
+		"@types/react": "19.3.0",
+		"babel-plugin-react-compiler": "1.0.0",
+		"react-native-svg-transformer": "1.5.3",
+		"typescript": "7.0.2"
+	},
+	"patchedDependencies": {
+		"@gorhom/bottom-sheet@5.2.14": "patches/@gorhom%2Fbottom-sheet@5.2.14.patch",
+		"@inlang/paraglide-js@2.29.3": "patches/@inlang%2Fparaglide-js@2.29.3.patch",
+		"temporal-polyfill@1.0.6": "patches/temporal-polyfill@1.0.6.patch"
+	}
+}

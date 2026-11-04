@@ -1,0 +1,11 @@
+{
+	"platforms": ["apple", "android"],
+	"apple": {
+		"modules": ["FieldAccessibilityModule"]
+	},
+	"android": {
+		"modules": [
+			"expo.modules.fieldaccessibility.FieldAccessibilityModule"
+		]
+	}
+}
