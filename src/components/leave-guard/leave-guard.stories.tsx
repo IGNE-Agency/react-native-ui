@@ -2,7 +2,6 @@ import type {
 	Meta,
 	StoryObj,
 } from "@storybook/react-native";
-import { useStore } from "@tanstack/react-form";
 import { useRef, useState, type ReactNode } from "react";
 import { Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
@@ -110,11 +109,7 @@ const StoryGuardedSheet = (copy: SheetCopy): ReactNode => {
 			stops.current?.close();
 		},
 	});
-	const unsaved = useStore(
-		form.store,
-		state => state.isDirty && !state.isSubmitting,
-	);
-	const guard = useLeaveGuard(unsaved);
+	const guard = useLeaveGuard();
 
 	return (
 		<>
