@@ -16,6 +16,8 @@
 		"expo-module.config.json",
 		"ios",
 		"android",
+		"!android/build",
+		"!android/.gradle",
 		"patches"
 	],
 	"type": "module",
