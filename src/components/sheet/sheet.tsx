@@ -232,7 +232,7 @@ const Root = ({
 	const [token] = useState<object>(() => ({}));
 	const above = useSheetsAbove(token);
 	const covered = above.length > 0;
-	const receding = useReceding(edge, above, theme.unit[5]);
+	const receding = useReceding(edge, above, theme.unit[6]);
 	const blocking = guard?.blocking === true;
 	const leave = () => sheet.current?.close();
 	const close = () =>

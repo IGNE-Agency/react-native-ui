@@ -70,7 +70,7 @@ export type Receding = Readonly<{
  * shades over, all following how far those sheets have risen.
  *
  * @example
- *   const receding = useReceding(edge, above, theme.unit[5]);
+ *   const receding = useReceding(edge, above, theme.unit[6]);
  *   <Animated.View onLayout={receding.measure} style={[styles.frame, receding.frame]} />
  */
 export const useReceding = (

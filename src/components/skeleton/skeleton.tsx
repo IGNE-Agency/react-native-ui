@@ -45,8 +45,8 @@ const styles = StyleSheet.create(theme => ({
 				},
 				circle: {
 					borderRadius: theme.radius.circle,
-					width: theme.unit[22],
-					height: theme.unit[22],
+					width: theme.unit[28],
+					height: theme.unit[28],
 				},
 			},
 		},
