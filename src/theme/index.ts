@@ -27,7 +27,7 @@ declare module "react-native-unistyles" {
  * `tz build` generated through the kit's Terrazzo plugin.
  *
  * @example
- *   import { registerTheme } from "@maanlamp/react-native-ui/theme";
+ *   import { registerTheme } from "@igne-agency/react-native-ui/theme";
  *   import { dark, light } from "./theme.gen";
  *
  *   registerTheme({ light, dark });
