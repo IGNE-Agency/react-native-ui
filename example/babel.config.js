@@ -1,7 +1,7 @@
 const { realpathSync } = require("node:fs");
 const path = require("node:path");
 
-const KIT = "@maanlamp/react-native-ui";
+const KIT = "@igne-agency/react-native-ui";
 
 /** Compares paths with forward slashes, whichever separator Babel hands over. */
 const slashed = file => file.replaceAll("\\", "/");

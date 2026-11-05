@@ -21,7 +21,7 @@ export type ReactNativeThemeOptions = Readonly<{
 	/**
 	 * The module the generated file imports the `SysTheme` type from.
 	 *
-	 * @default "@maanlamp/react-native-ui/theme"
+	 * @default "@igne-agency/react-native-ui/theme"
 	 */
 	themeModule?: string;
 }>;
@@ -48,7 +48,7 @@ type Components = readonly [
 	number | undefined,
 ];
 
-const NAME = "@maanlamp/react-native-ui/terrazzo";
+const NAME = "@igne-agency/react-native-ui/terrazzo";
 
 const ROOT = "sys";
 
@@ -527,7 +527,7 @@ const narrowTypographyRule: NonNullable<
  * @example
  *   // terrazzo.config.ts
  *   import { defineConfig } from "@terrazzo/cli";
- *   import reactNativeTheme from "@maanlamp/react-native-ui/terrazzo";
+ *   import reactNativeTheme from "@igne-agency/react-native-ui/terrazzo";
  *
  *   export default defineConfig({
  *   	tokens: ["./src/theme/tokens/app.resolver.json"],
@@ -541,7 +541,7 @@ const reactNativeTheme = (
 	const filename = options.filename ?? "theme.gen.ts";
 	const themeModule =
 		options.themeModule ??
-		"@maanlamp/react-native-ui/theme";
+		"@igne-agency/react-native-ui/theme";
 	return {
 		name: NAME,
 		config: narrowTypographyRule,
