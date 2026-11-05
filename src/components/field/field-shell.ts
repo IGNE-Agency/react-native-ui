@@ -10,9 +10,13 @@ type EdgeStyle = Readonly<{
 	borderColor: string;
 }>;
 
-/** The paint a state treatment re-points: the edge and the fill. */
+/** What a state treatment re-points: the edge, the fill, and the inset that keeps a control's text still while its edge thickens. */
 type StateStyle = Partial<EdgeStyle> &
-	Readonly<{ backgroundColor?: string; color?: string }>;
+	Readonly<{
+		backgroundColor?: string;
+		color?: string;
+		paddingHorizontal?: number;
+	}>;
 
 /** The edge a control wears in each of its states. */
 export type ControlEdge = Readonly<{
@@ -78,8 +82,8 @@ export type FieldGroupCompound = Readonly<{
 }>;
 
 /**
- * The edge every control wears, per state: one width, and the border role each
- * state re-points it to. A control spreads `resting` into its base style and
+ * The edge every control wears, per state: a hairline at rest that thickens on
+ * focus, and the border role each state re-points it to. A control spreads `resting` into its base style and
  * lets `fieldGroupVariants` and `fieldGroupCompounds` apply the rest.
  *
  * @example
@@ -94,6 +98,7 @@ export const controlEdge = (
 		borderColor: theme.color.border,
 	},
 	focused: {
+		borderWidth: theme.unit[1],
 		borderColor: theme.color.focusRing,
 	},
 	invalid: {
@@ -243,7 +248,15 @@ export const fieldControlVariants = (
 		},
 		false: {},
 	},
-	focused: { true: {}, false: {} },
+	focused: {
+		true: {
+			paddingHorizontal:
+				theme.unit[8] -
+				theme.unit[1] +
+				StyleSheet.hairlineWidth,
+		},
+		false: {},
+	},
 	readonly: { true: {}, false: {} },
 	invalid: { true: {}, false: {} },
 	valid: { true: {}, false: {} },
