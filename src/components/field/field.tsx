@@ -480,7 +480,7 @@ const RequiredMark = ({ testID }: PartProps): ReactNode => {
 	return (
 		<Icon.Root
 			svg={AsteriskIcon}
-			size="sm"
+			size="xs"
 			color={theme.color.primary}
 			testID={testID}
 		/>
@@ -490,9 +490,11 @@ const RequiredMark = ({ testID }: PartProps): ReactNode => {
 const OptionalMark = ({ testID }: PartProps): ReactNode => {
 	const { copy } = useControl();
 	return (
-		<NativeText style={styles.caption} testID={testID}>
-			{copy.optional}
-		</NativeText>
+		<View style={styles.optionalMark} testID={testID}>
+			<NativeText style={styles.caption}>
+				{copy.optional}
+			</NativeText>
+		</View>
 	);
 };
 
@@ -697,6 +699,7 @@ const styles = StyleSheet.create(theme => ({
 		alignItems: "flex-start",
 		flex: 1,
 	},
+	optionalMark: { opacity: 0.55 },
 	label: {
 		...theme.font.label.medium,
 		color: theme.color.text,

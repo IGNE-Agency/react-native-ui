@@ -148,10 +148,7 @@ const Root = ({
 					busy: busy && name !== undefined,
 				}}
 				disabled={blocked}
-				hitSlop={
-					hitSlop ??
-					(size === "sm" ? theme.unit[2] : undefined)
-				}
+				hitSlop={hitSlop}
 				onPress={event => {
 					hapticTick();
 					onPress?.(event);
