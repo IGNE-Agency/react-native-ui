@@ -13,8 +13,9 @@ bunx expo install @igne-agency/react-native-ui
 Then install the peer dependencies your app doesn't have yet. `expo install` picks the versions that match your SDK:
 
 ```sh
-bunx expo install react-native-unistyles react-native-reanimated react-native-worklets \
-  react-native-gesture-handler react-native-svg react-native-safe-area-context \
+bunx expo install react-native-unistyles react-native-nitro-modules \
+  react-native-reanimated react-native-worklets react-native-gesture-handler \
+  react-native-svg react-native-safe-area-context \
   react-native-keyboard-controller @gorhom/bottom-sheet @tanstack/react-form \
   expo-blur @expo/ui expo-document-picker expo-image-picker expo-haptics \
   temporal-polyfill
