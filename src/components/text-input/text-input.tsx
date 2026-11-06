@@ -285,7 +285,7 @@ const styles = StyleSheet.create(theme => ({
 					alignItems: "stretch",
 					flexDirection: "column",
 					paddingVertical: theme.unit[4],
-					borderRadius: theme.radius.xl,
+					borderRadius: fieldGroup(theme).minHeight / 2,
 				} satisfies ViewStyle,
 				false: {} satisfies ViewStyle,
 			},

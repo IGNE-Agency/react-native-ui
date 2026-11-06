@@ -47,7 +47,7 @@ const slotTheme = (
 			minWidth: 0,
 			maxWidth: theme.unit[24],
 			aspectRatio: 1,
-			borderRadius: theme.radius.sm,
+			borderRadius: theme.radius.full,
 			backgroundColor: state.invalid
 				? theme.color.error.bg
 				: theme.color.surfaceHighest,

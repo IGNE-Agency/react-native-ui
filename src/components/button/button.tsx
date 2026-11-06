@@ -223,17 +223,17 @@ const styles = StyleSheet.create(theme => ({
 			},
 			size: {
 				sm: {
-					minHeight: theme.unit[22],
+					minHeight: theme.unit[20],
 					paddingHorizontal: theme.unit[6],
 					gap: theme.unit[4],
 				},
 				md: {
-					minHeight: theme.unit[22],
+					minHeight: theme.unit[24],
 					paddingHorizontal: theme.unit[10],
 					gap: theme.unit[4],
 				},
 				lg: {
-					minHeight: theme.unit[24],
+					minHeight: theme.unit[28],
 					paddingHorizontal: theme.unit[12],
 					gap: theme.unit[6],
 				},
@@ -267,17 +267,17 @@ const styles = StyleSheet.create(theme => ({
 			{
 				iconOnly: true,
 				size: "sm",
-				styles: { width: theme.unit[22] },
+				styles: { width: theme.unit[20] },
 			},
 			{
 				iconOnly: true,
 				size: "md",
-				styles: { width: theme.unit[22] },
+				styles: { width: theme.unit[24] },
 			},
 			{
 				iconOnly: true,
 				size: "lg",
-				styles: { width: theme.unit[24] },
+				styles: { width: theme.unit[28] },
 			},
 			{
 				inlay: true,
