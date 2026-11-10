@@ -160,6 +160,10 @@ export type SysTheme = Readonly<{
 			bg: string;
 			fg: string;
 		}>;
+		/** A field the browser has filled in for the user. */
+		autofill: Readonly<{
+			bg: string;
+		}>;
 		/** The page behind everything. */
 		bg: string;
 		/** The dimmest card: a table's sub-rows. */
