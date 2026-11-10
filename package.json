@@ -1,6 +1,6 @@
 {
 	"name": "@igne-agency/react-native-ui",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "IGNE's React Native component kit: primitives and the presets over them, form controls in three tiers, a bottom sheet, and DTCG tokens themed through Unistyles.",
 	"license": "MIT",
 	"repository": {
