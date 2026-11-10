@@ -252,6 +252,13 @@
 					"$value": "{ref.neutral.800}"
 				}
 			},
+			"autofill": {
+				"$description": "A field the browser has filled in for the user",
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.blue.50}"
+				}
+			},
 			"bg": {
 				"$description": "The page behind everything",
 				"$type": "color",

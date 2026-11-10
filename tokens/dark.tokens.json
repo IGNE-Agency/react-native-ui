@@ -118,6 +118,12 @@
 					"$value": "{ref.neutral.0}"
 				}
 			},
+			"autofill": {
+				"bg": {
+					"$type": "color",
+					"$value": "{ref.blue.750}"
+				}
+			},
 			"bg": {
 				"$type": "color",
 				"$value": "{ref.neutral.800}"
