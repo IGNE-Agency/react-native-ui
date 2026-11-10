@@ -98,7 +98,6 @@ type PickOutcome =
 			files: readonly FileAsset[];
 	  }>
 	| Readonly<{ status: "cancelled" }>
-	| Readonly<{ status: "denied" }>
 	| Readonly<{ status: "failed" }>;
 
 type FileInputContextValue = Readonly<{
@@ -165,11 +164,6 @@ const pickImages = async (
 	multiple: boolean,
 	unnamed: string,
 ): Promise<PickOutcome> => {
-	const permission =
-		await ImagePicker.requestMediaLibraryPermissionsAsync();
-	if (!permission.granted) {
-		return { status: "denied" };
-	}
 	try {
 		const result =
 			await ImagePicker.launchImageLibraryAsync({
@@ -241,10 +235,6 @@ const Root = ({
 				? await pickImages(multiple, fileCopy.unnamed)
 				: await pickDocuments(multiple, accept);
 		setPicking(false);
-		if (outcome.status === "denied") {
-			setNotice(fileCopy.permissionDenied);
-			return;
-		}
 		if (outcome.status === "failed") {
 			setNotice(fileCopy.failed);
 			return;
