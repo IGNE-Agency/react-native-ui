@@ -45,7 +45,7 @@ jobs:
       - name: Build the Terrazzo plugin
         run: bun run build:terrazzo
 
-      - name: Check that every export lists types first
+      - name: Check the exports map and the bin targets
         run: bun tools/check-exports.ts
 
   android:

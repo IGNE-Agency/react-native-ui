@@ -5,15 +5,20 @@
  * key ahead of `types` would point it at the kit's source instead of its
  * declarations.
  *
+ * Also fails when a `bin` target does not exist. The release runs this before
+ * `npm publish`, which drops a `bin` whose file is missing before `prepack`.
+ *
  * @example
  *   bun tools/check-exports.ts
  */
 type Exports = Readonly<Record<string, unknown>>;
 
-const manifest: Readonly<{ exports?: Exports }> =
-	await Bun.file(
-		new URL("../package.json", import.meta.url),
-	).json();
+const manifest: Readonly<{
+	bin?: Readonly<Record<string, string>>;
+	exports?: Exports;
+}> = await Bun.file(
+	new URL("../package.json", import.meta.url),
+).json();
 
 const exportsMap = manifest.exports ?? {};
 
@@ -47,13 +52,39 @@ const problems = Object.entries(exportsMap).flatMap(
 		),
 );
 
+const binProblems = (
+	await Promise.all(
+		Object.entries(manifest.bin ?? {}).map(
+			async ([name, target]) =>
+				(await Bun.file(
+					new URL(`../${target}`, import.meta.url),
+				).exists())
+					? []
+					: [`${name}: ${target} does not exist`],
+		),
+	)
+).flat();
+
 if (problems.length > 0) {
 	console.error(
 		`package.json exports:\n${problems.map(problem => `  ${problem}`).join("\n")}`,
 	);
+}
+
+if (binProblems.length > 0) {
+	console.error(
+		`package.json bin:\n${binProblems.map(problem => `  ${problem}`).join("\n")}`,
+	);
+}
+
+if (problems.length > 0 || binProblems.length > 0) {
 	process.exit(1);
 }
 
 console.log(
 	'package.json exports: "types" comes first in every conditional entry.',
+);
+
+console.log(
+	"package.json bin: every target exists without a build.",
 );

@@ -51,7 +51,7 @@ jobs:
       - name: Lint, format and type-check
         run: bun run check
 
-      - name: Check that every export lists types first
+      - name: Check the exports map and the bin targets
         run: bun tools/check-exports.ts
 
       - name: Publish

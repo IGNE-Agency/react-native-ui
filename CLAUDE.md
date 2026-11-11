@@ -23,9 +23,9 @@ You are working in a published TypeScript + React Native component kit, `@igne-a
 
 ## Packaging
 
-The kit ships source, not built JavaScript. Metro resolves `src/` through the `react-native` export condition, and TypeScript resolves `build/*.d.ts` through `types`. The only built artifacts are the declarations, the Terrazzo plugin, which Node loads, and `react-native-ui-tokens` (`src/terrazzo/build-tokens.ts`), the `bin` an app builds its tokens with instead of `tz build`, which loads any `vite.config.*` in the project and runs its plugins.
+The kit ships source, not built JavaScript. Metro resolves `src/` through the `react-native` export condition, and TypeScript resolves `build/*.d.ts` through `types`. The only built artifacts are the declarations and the Terrazzo plugin, which Node loads. `react-native-ui-tokens` is the `bin` an app builds its tokens with instead of `tz build`, which loads any `vite.config.*` in the project and runs its plugins. It points at the source, `src/terrazzo/build-tokens.ts`, which Bun runs as is: npm drops a `bin` whose file is missing before `prepack`, and `bun run check:exports` fails on one.
 
-- `types` comes first in every `exports` entry. `bun run check:exports` asserts it.
+- `types` comes first in every `exports` entry. `bun run check:exports` asserts it, and that every `bin` target exists without a build.
 - Relative imports only. There is no `@/` alias: in the consuming app's Babel, `@/` means the app's `src`.
 - `isolatedDeclarations` is on. Every exported value carries a type the declaration emitter can read without inference. Annotate component return types, and type namespace objects explicitly.
 - The kit has no copy of its own, no storage keys and no API client. Every string a component shows or announces comes in through a prop named for what it says (`busyLabel`, `showPasswordLabel`).
