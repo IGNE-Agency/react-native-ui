@@ -242,7 +242,19 @@ A project layers its own token files over these in a [DTCG resolver](https://www
    });
    ```
 
-   `tz build` writes `src/theme/theme.gen.ts`, which exports `light` and `dark` typed as the kit's `SysTheme`. Gitignore it. `reactNativeTheme({ filename })` changes the file name.
+   Build it with the kit's `react-native-ui-tokens` command, not `tz build`. It needs Bun, and `@terrazzo/cli` and `@terrazzo/parser` installed:
+
+   ```json
+   {
+   	"scripts": {
+   		"tokens": "react-native-ui-tokens"
+   	}
+   }
+   ```
+
+   `tz build` loads `terrazzo.config.ts` through a Vite dev server, which also loads any `vite.config.*` in the project and runs its plugins, dev-only ones included. `react-native-ui-tokens` runs the same Terrazzo build without Vite, and is the same command the web kit ships as `react-web-ui-tokens`.
+
+   It writes `src/theme/theme.gen.ts`, which exports `light` and `dark` typed as the kit's `SysTheme`. Gitignore it. `reactNativeTheme({ filename })` changes the file name.
 
 4. Register the generated themes in place of the default one:
 
