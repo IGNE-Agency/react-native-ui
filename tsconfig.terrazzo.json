@@ -11,7 +11,7 @@
 		"outDir": "build/terrazzo",
 		"rootDir": "src/terrazzo",
 		"declarationMap": false,
-		"types": []
+		"types": ["bun"]
 	},
 	"include": ["src/terrazzo"],
 	"exclude": []

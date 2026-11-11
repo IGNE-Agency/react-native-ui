@@ -23,7 +23,7 @@ You are working in a published TypeScript + React Native component kit, `@igne-a
 
 ## Packaging
 
-The kit ships source, not built JavaScript. Metro resolves `src/` through the `react-native` export condition, and TypeScript resolves `build/*.d.ts` through `types`. The only built artifacts are the declarations and the Terrazzo plugin, which Node loads.
+The kit ships source, not built JavaScript. Metro resolves `src/` through the `react-native` export condition, and TypeScript resolves `build/*.d.ts` through `types`. The only built artifacts are the declarations, the Terrazzo plugin, which Node loads, and `react-native-ui-tokens` (`src/terrazzo/build-tokens.ts`), the `bin` an app builds its tokens with instead of `tz build`, which loads any `vite.config.*` in the project and runs its plugins.
 
 - `types` comes first in every `exports` entry. `bun run check:exports` asserts it.
 - Relative imports only. There is no `@/` alias: in the consuming app's Babel, `@/` means the app's `src`.
@@ -116,7 +116,7 @@ A role stood up by hand for a widget a primitive or the platform already provide
 src/components/   one folder per component: <name>/<name>.tsx
 src/lib/          shared plumbing: a11y, forms, haptics, motion, wait, dates
 src/theme/        SysTheme, registerTheme, the default theme
-src/terrazzo/     the Terrazzo plugin, built to build/terrazzo/ for Node
+src/terrazzo/     the Terrazzo plugin and the react-native-ui-tokens command, built to build/terrazzo/
 src/expo-router/  the expo-router adapters, their own entry point over an optional peer
 tokens/           DTCG token files and the kit's resolver
 ios/, android/    the FieldAccessibility native module
