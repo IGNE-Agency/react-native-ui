@@ -8,7 +8,7 @@
 		"url": "git+https://github.com/IGNE-Agency/react-native-ui.git"
 	},
 	"bin": {
-		"react-native-ui-tokens": "./build/terrazzo/build-tokens.js"
+		"react-native-ui-tokens": "src/terrazzo/build-tokens.ts"
 	},
 	"files": [
 		"src",
