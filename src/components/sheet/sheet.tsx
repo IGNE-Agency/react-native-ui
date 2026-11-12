@@ -575,8 +575,8 @@ type SheetNamespace = Readonly<{
 
 /**
  * A bottom sheet drawn over the app, with snap points, a grab bar
- * and a title line that carries the close control when it is dismissable, and a
- * back arrow before the title when `Header` is given `back`.
+ * and a title line that carries the close control when `Header` is given
+ * `closeLabel`, and a back arrow before the title when it is given `back`.
  * It rises no higher than the safe area, and `Content` scrolls and ends above
  * it, each never less than a gutter.
  * It grows to the height it scrolls through, so a column shorter than the sheet
