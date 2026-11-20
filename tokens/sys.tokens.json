@@ -8,6 +8,7 @@
 				"$value": "{ref.neutral.750}"
 			},
 			"on-primary": {
+				"$description": "Text and icons on a primary fill",
 				"$type": "color",
 				"$value": "{ref.neutral.0}"
 			},
@@ -17,11 +18,11 @@
 				"$value": "{ref.neutral.50}"
 			},
 			"on-primary-container": {
+				"$description": "Text and icons on a primary container",
 				"$type": "color",
 				"$value": "{ref.neutral.800}"
 			},
 			"identity": {
-				"$description": "The brand container, turned to a hue of its own",
 				"1": {
 					"bg": {
 						"$type": "color",
@@ -141,7 +142,8 @@
 							}
 						}
 					}
-				}
+				},
+				"$description": "The brand container, turned to a hue of its own"
 			},
 			"success": {
 				"$description": "Done, approved",
@@ -238,6 +240,7 @@
 				"$value": "{ref.neutral.400}"
 			},
 			"text-inverse": {
+				"$description": "Text on a surface of the opposite theme",
 				"$type": "color",
 				"$value": "{ref.neutral.0}"
 			},
@@ -324,24 +327,29 @@
 		},
 		"state": {
 			"hover": {
+				"$description": "The state layer's opacity under the pointer",
 				"$type": "number",
 				"$value": 0.08
 			},
 			"focus": {
+				"$description": "The state layer's opacity while focused",
 				"$type": "number",
 				"$value": 0.1
 			},
 			"pressed": {
+				"$description": "The state layer's opacity while pressed",
 				"$type": "number",
 				"$value": 0.12
 			},
 			"dragged": {
+				"$description": "The state layer's opacity while something is dragged over it",
 				"$type": "number",
 				"$value": 0.16
 			}
 		},
 		"focus-ring": {
 			"width": {
+				"$description": "The focus ring's stroke",
 				"$type": "dimension",
 				"$value": {
 					"value": 3,
@@ -349,6 +357,7 @@
 				}
 			},
 			"offset": {
+				"$description": "The gap between the focus ring and what it surrounds",
 				"$type": "dimension",
 				"$value": {
 					"value": 2,
@@ -361,18 +370,7 @@
 				"$description": "Copy",
 				"small": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 0.917,
-							"unit": "rem"
-						},
-						"fontWeight": 400,
-						"lineHeight": 1.4,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.body.regular.0}"
 				},
 				"medium": {
 					"$type": "typography",
@@ -406,93 +404,27 @@
 				"$description": "Buttons, tabs, nav items, field labels and chips",
 				"small": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 0.917,
-							"unit": "rem"
-						},
-						"fontWeight": 600,
-						"lineHeight": 1.2,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.label.semibold.0}"
 				},
 				"medium": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 1,
-							"unit": "rem"
-						},
-						"fontWeight": 600,
-						"lineHeight": 1.2,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.label.semibold.1}"
 				},
 				"large": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 1.167,
-							"unit": "rem"
-						},
-						"fontWeight": 700,
-						"lineHeight": 1.2,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.label.bold.2}"
 				},
 				"small-strong": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 0.917,
-							"unit": "rem"
-						},
-						"fontWeight": 800,
-						"lineHeight": 1.2,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.label.extrabold.0}"
 				},
 				"medium-strong": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 1,
-							"unit": "rem"
-						},
-						"fontWeight": 800,
-						"lineHeight": 1.2,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.label.extrabold.1}"
 				},
 				"large-strong": {
 					"$type": "typography",
-					"$value": {
-						"fontSize": {
-							"value": 1.167,
-							"unit": "rem"
-						},
-						"fontWeight": 800,
-						"lineHeight": 1.2,
-						"letterSpacing": {
-							"value": 0,
-							"unit": "px"
-						}
-					}
+					"$value": "{ref.font.label.extrabold.2}"
 				}
 			}
 		},
@@ -951,7 +883,8 @@
 					"value": 8,
 					"unit": "rem"
 				}
-			}
+			},
+			"$description": "The spacing scale, in eighths of a rem: unit.8 is 1rem"
 		},
 		"radius": {
 			"none": {
@@ -1018,6 +951,7 @@
 		},
 		"shadow": {
 			"umbra": {
+				"$description": "The dark core of every elevation shadow",
 				"$type": "color",
 				"$value": {
 					"colorSpace": "srgb",
@@ -1027,6 +961,7 @@
 				}
 			},
 			"penumbra": {
+				"$description": "The soft outer edge of every elevation shadow",
 				"$type": "color",
 				"$value": {
 					"colorSpace": "srgb",

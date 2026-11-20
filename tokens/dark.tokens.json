@@ -154,7 +154,7 @@
 			},
 			"border": {
 				"$type": "color",
-				"$value": "{ref.neutral.500}"
+				"$value": "{ref.neutral.450}"
 			},
 			"outline": {
 				"$type": "color",

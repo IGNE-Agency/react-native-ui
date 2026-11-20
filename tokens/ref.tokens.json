@@ -937,6 +937,21 @@
 			"body": {
 				"$description": "Everything else: copy, labels, buttons, fields and chips",
 				"regular": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 400,
+							"lineHeight": 1.4,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
 					"1": {
 						"$type": "typography",
 						"$value": {
@@ -1014,6 +1029,21 @@
 					}
 				},
 				"semibold": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 600,
+							"lineHeight": 1.4,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
 					"1": {
 						"$type": "typography",
 						"$value": {
@@ -1091,6 +1121,21 @@
 					}
 				},
 				"bold": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 700,
+							"lineHeight": 1.4,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
 					"1": {
 						"$type": "typography",
 						"$value": {
@@ -1168,6 +1213,21 @@
 					}
 				},
 				"extrabold": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 800,
+							"lineHeight": 1.4,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
 					"1": {
 						"$type": "typography",
 						"$value": {
@@ -1245,7 +1305,151 @@
 					}
 				}
 			},
-			"$description": "The type scale: every weight at every size, in the heading and the body family."
+			"label": {
+				"$description": "The body sizes, set tight for a single line: buttons, tabs, labels and chips.",
+				"semibold": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 600,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
+					"1": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 1,
+								"unit": "rem"
+							},
+							"fontWeight": 600,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
+					"2": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 1.167,
+								"unit": "rem"
+							},
+							"fontWeight": 600,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					}
+				},
+				"bold": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 700,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
+					"1": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 1,
+								"unit": "rem"
+							},
+							"fontWeight": 700,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
+					"2": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 1.167,
+								"unit": "rem"
+							},
+							"fontWeight": 700,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					}
+				},
+				"extrabold": {
+					"0": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 0.917,
+								"unit": "rem"
+							},
+							"fontWeight": 800,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
+					"1": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 1,
+								"unit": "rem"
+							},
+							"fontWeight": 800,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					},
+					"2": {
+						"$type": "typography",
+						"$value": {
+							"fontSize": {
+								"value": 1.167,
+								"unit": "rem"
+							},
+							"fontWeight": 800,
+							"lineHeight": 1.2,
+							"letterSpacing": {
+								"value": 0,
+								"unit": "px"
+							}
+						}
+					}
+				}
+			},
+			"$description": "The type scale: every weight at every size, in the heading, body and label families."
 		}
 	}
 }
